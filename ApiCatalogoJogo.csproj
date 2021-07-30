@@ -1,0 +1,78 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{A48661B5-6EF2-4F23-91B7-95CF3A1E45BE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>ApiCatalogoJogo</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="ExemploApiCatalogoJogos\ExemploApiCatalogoJogos.csproj" />
+    <Content Include="ExemploApiCatalogoJogos\ExemploApiCatalogoJogos.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Apresentação\Slide para demonstrar estrutura do projeto.pptx" />
+    <None Include="ExemploApiCatalogoJogos\appsettings.Development.json" />
+    <None Include="ExemploApiCatalogoJogos\appsettings.json" />
+    <None Include="ExemploApiCatalogoJogos\Properties\launchSettings.json" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExemploApiCatalogoJogos\Controllers\V1\CicloDeVidaIDController.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Controllers\V1\JogosController.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Entities\Jogo.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Exceptions\JogoJaCadastradoException.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Exceptions\JogoNaoCadastradoException.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\InputModel\JogoInputModel.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Middleware\ExceptionMiddleware.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Program.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Repositories\IJogoRepository.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Repositories\JogoRepository.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Repositories\JogoSqlServerRepository.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Services\IJogoService.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Services\JogoService.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\Startup.cs" />
+    <Compile Include="ExemploApiCatalogoJogos\ViewModel\JogoViewModel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
